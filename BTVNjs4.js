@@ -233,11 +233,11 @@
 //8
 //hiển thị các số 1,2,3...n mà không chia hết cho 2
 
-while (true) {
-  let n = +prompt("Nhập n");
-  if (Number.isNaN(n) || !Number.isInteger(n) || n <= 0) {
-    console.log("error");
-  } else {
+let n = +prompt("Nhập n");
+if (Number.isNaN(n) || !Number.isInteger(n) || n <= 0) {
+  console.log("error");
+} else {
+  while (true) {
     let menu = +prompt(`=== MENU XỬ LÝ SỐ NGUYÊN N ===
         (N là số nguyên dương bạn nhập ban đầu)
         
@@ -304,13 +304,13 @@ while (true) {
     } else if (menu === 7) {
       for (i = 1; i <= n; i = i + 1) {
         if (i % 3 === 0 && i % 5 === 0) {
-          console.log(`${i}`);
+          console.log(`${i} là số chia hết cho cả 3 và 5`);
         }
       }
     } else if (menu === 8) {
       for (i = 1; i <= n; i = i + 1) {
         if (i % 2 !== 0) {
-          console.log(`${i}`);
+          console.log(`${i} là số lẻ trong dãy số từ 1 đến ${n}`);
         }
       }
     } else if (menu === 9) {
