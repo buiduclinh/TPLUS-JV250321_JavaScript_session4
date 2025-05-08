@@ -107,97 +107,100 @@
 //6-hiển thị số lần đúng sai
 //7-thoát vòng lặp
 
-// let number1 = 0;
-// let number2 = 0;
-// let result = 0;
-// let count = 0;
-// let answer = 0;
-// let corect = 0;
-// let wrong = 0;
+let correct = 0;
+let wrong = 0;
 
-// while (true) {
-//   let n = +prompt(`
-//     === MENU BẢNG CỬU CHƯƠNG NÂNG CAO ===
+while (true) {
+  let n = +prompt(`
+    === MENU BẢNG CỬU CHƯƠNG NÂNG CAO ===
 
-// 1. Hiển thị bảng cửu chương từ 1 đến 9
-// 2. Hiển thị bảng cửu chương của một số cụ thể
-// 3. Kiểm tra kết quả phép nhân
-// 4. Hiển thị bảng cửu chương ngược
-// 5. Luyện tập bảng nhân với số lần tùy chọn
-// 6. Thống kê kết quả đúng/sai
-// 7. Thoát
-// Lựa chọn của bạn: `);
-//   if (n === 1) {
-//     for (i = 1; i <= 10; i = i + 1) {
-//       for (m = 1; m <= 10; m = m + 1) console.log(`${i}x${m}=${i * m}`);
-//     }
-//   } else if (n === 2) {
-//     m = +prompt("Nhập 1 bất kỳ số từ 1-9");
-//     if (m >= 1 && m <= 10) {
-//       for (i = 1; i <= 10; i = i + 1) {
-//         console.log(`${m}x${i}=${m * i}`);
-//       }
-//     } else {
-//       console.log("error");
-//     }
-//   } else if (n === 3) {
-//     number1 = +prompt("nhập số thứ nhất");
-//     number2 = +prompt("nhập số thứ hai");
-//     if (
-//       Number.isNaN(number1) ||
-//       Number.isNaN(number2) ||
-//       !Number.isInteger(number1) ||
-//       !Number.isInteger(number2)
-//     ) {
-//       console.log("error");
-//     } else {
-//       result = number1 * number2;
-//       console.log(`${number1}x${number2}=${result}`);
-//     }
-//   } else if (n === 4) {
-//     for (i = 10; i >= 1; i = i - 1) {
-//       for (m = 10; m >= 1; m = m - 1) console.log(`${i}x${m}=${i * m}`);
-//     }
-//   } else if (n === 5) {
-//     count = +prompt("nhập số lần");
-//     if (Number.isNaN(count) || !Number.isInteger(count)) {
-//       console.log("error");
-//     } else {
-//       for (i = 1; i <= count; i = i + 1) {
-//         number1 = +prompt("nhập số thứ nhất");
-//         number2 = +prompt("nhập số thứ hai");
-//         answer = +prompt("kết quả");
-//         if (
-//           Number.isNaN(number1) ||
-//           Number.isNaN(number2) ||
-//           Number.isNaN(answer) ||
-//           !Number.isInteger(number1) ||
-//           !Number.isInteger(number2) ||
-//           !Number.isInteger(answer)
-//         ) {
-//           console.log("error");
-//         } else {
-//           result = number1 * number2;
-//           if (answer !== result) {
-//             console.log(`${number1}x${number2}=${answer}` + "--->Wrong");
-//             console.log(`${number1}x${number2}=${result}` + "--->Right");
-//             wrong = wrong + 1;
-//           } else {
-//             console.log(`${number1}x${number2}=${result}` + "--->Corect");
-//             corect = corect + 1;
-//           }
-//         }
-//       }
-//     }
-//   } else if (n === 6) {
-//     console.log(`Số câu bạn làm sai là: ${wrong}`);
-//     console.log(`Số câu bạn làm đúng là: ${corect}`);
-//   } else if (n === 7) {
-//     break;
-//   } else {
-//     console.log("error");
-//   }
-// }
+1. Hiển thị bảng cửu chương từ 1 đến 9
+2. Hiển thị bảng cửu chương của một số cụ thể
+3. Kiểm tra kết quả phép nhân
+4. Hiển thị bảng cửu chương ngược
+5. Luyện tập bảng nhân với số lần tùy chọn
+6. Thống kê kết quả đúng/sai
+7. Thoát
+Lựa chọn của bạn: `);
+  let number1 = 0;
+  let number2 = 0;
+  let result = 0;
+  let count = 0;
+  let answer = 0;
+  if (n === 1) {
+    for (i = 1; i <= 9; i = i + 1) {
+      for (m = 1; m <= 10; m = m + 1) console.log(`${i}x${m}=${i * m}`);
+    }
+  } else if (n === 2) {
+    m = +prompt("Nhập 1 bất kỳ số từ 1-9");
+    if (m >= 1 && m <= 10) {
+      for (i = 1; i <= 10; i = i + 1) {
+        console.log(`${m}x${i}=${m * i}`);
+      }
+    } else {
+      console.log("error");
+    }
+  } else if (n === 3) {
+    number1 = Math.ceil(Mathrandom() * 9 + 1);
+    number2 = Math.ceil(Mathrandom() * 9 + 1);
+    if (
+      Number.isNaN(number1) ||
+      Number.isNaN(number2) ||
+      !Number.isInteger(number1) ||
+      !Number.isInteger(number2)
+    ) {
+      console.log("error");
+    } else {
+      result = number1 * number2;
+      console.log(`${number1}x${number2}=${result}`);
+    }
+  } else if (n === 4) {
+    for (i = 10; i >= 1; i = i - 1) {
+      for (m = 10; m >= 1; m = m - 1) console.log(`${i}x${m}=${i * m}`);
+    }
+  } else if (n === 5) {
+    count = 0;
+    correct = 0;
+    wrong = 0;
+    count = +prompt("nhập số lần");
+    if (Number.isNaN(count) || !Number.isInteger(count)) {
+      console.log("error");
+    } else {
+      for (i = 1; i <= count; i = i + 1) {
+        number1 = Math.ceil(Mathrandom() * 9 + 1);
+        number2 = Math.ceil(Mathrandom() * 9 + 1);
+        answer = +prompt("kết quả");
+        if (
+          Number.isNaN(number1) ||
+          Number.isNaN(number2) ||
+          Number.isNaN(answer) ||
+          !Number.isInteger(number1) ||
+          !Number.isInteger(number2) ||
+          !Number.isInteger(answer)
+        ) {
+          console.log("error");
+        } else {
+          result = number1 * number2;
+          if (answer !== result) {
+            console.log(`${number1}x${number2}=${answer}` + "--->Wrong");
+            console.log(`${number1}x${number2}=${result}` + "--->Right");
+            wrong = wrong + 1;
+          } else {
+            console.log(`${number1}x${number2}=${result}` + "--->Correct");
+            correct = correct + 1;
+          }
+        }
+      }
+    }
+  } else if (n === 6) {
+    console.log(`Số câu bạn làm sai là: ${wrong}`);
+    console.log(`Số câu bạn làm đúng là: ${correct}`);
+  } else if (n === 7) {
+    break;
+  } else {
+    console.log("error");
+  }
+}
 
 //B4
 //gọi biến n và menu
@@ -232,91 +235,181 @@
 
 //8
 //hiển thị các số 1,2,3...n mà không chia hết cho 2
+// let loop = true;
+// let n = +prompt("Nhập n");
+// if (Number.isNaN(n) || !Number.isInteger(n) || n <= 0) {
+//   console.log("error");
+// } else {
+//   while (loop) {
+//     let menu = +prompt(`=== MENU XỬ LÝ SỐ NGUYÊN N ===
+//         (N là số nguyên dương bạn nhập ban đầu)
 
-let n = +prompt("Nhập n");
-if (Number.isNaN(n) || !Number.isInteger(n) || n <= 0) {
-  console.log("error");
-} else {
-  while (true) {
-    let menu = +prompt(`=== MENU XỬ LÝ SỐ NGUYÊN N ===
-        (N là số nguyên dương bạn nhập ban đầu)
-        
-        1. Kiểm tra N có phải số nguyên tố
-        2. Tính tổng các số từ 1 đến N
-        3. Tính giai thừa của N (N!)
-        4. In bảng nhân của N
-        5. Đếm số ước của N
-        6. Kiểm tra N có phải số hoàn hảo
-        7. In tất cả số chia hết cho 3 và 5 từ 1 đến N
-        8. In tất cả số lẻ từ 1 đến N
-        9. Thoát
-        Lựa chọn của bạn: `);
-    if (menu === 1) {
-      let isPrime = true;
-      for (i = 2; i <= Math.sqrt(n); i = i + 1) {
-        if (n % i === 0) {
-          isPrime = false;
-        }
-      }
-      if (isPrime) {
-        console.log(`${n} là số nguyên tố`);
-      } else {
-        console.log(`${n} không phải là số nguyên tố`);
-      }
-    } else if (menu === 2) {
-      let sumA = 0;
-      for (i = 1; i <= n; i = i + 1) {
-        sumA = sumA + i;
-      }
-      console.log(`tổng của 1 + 2 + 3 +...+ ${n} = ${sumA}`);
-    } else if (menu === 3) {
-      let result = 1;
-      for (i = n; i > 1; i = i - 1) {
-        result = result * i;
-      }
-      console.log(`${n} x (${n}-1) x (${n}-2)...x 2 x 1 = ${result}`);
-    } else if (menu === 4) {
-      let result1 = 0;
-      for (i = 1; i <= 10; i = i + 1) {
-        result1 = n * i;
-        console.log(`${n}x${i}=${result1}`);
-      }
-    } else if (menu === 5) {
-      let factor = 0;
-      for (i = 1; i <= n; i = i + 1) {
-        if (n % i === 0) {
-          factor = factor + 1;
-        }
-      }
-      console.log(`có tất cả ${factor} ước số từ 1 đến ${n}`);
-    } else if (menu === 6) {
-      let factor1 = 0;
-      for (i = 1; i < n; i = i + 1) {
-        if (n % i === 0) {
-          factor1 = factor1 + i;
-        }
-      }
-      if (factor1 === n) {
-        console.log(`${n} là số hoàn hảo`);
-      } else {
-        console.log(`${n} không phải là số hoàn hảo`);
-      }
-    } else if (menu === 7) {
-      for (i = 1; i <= n; i = i + 1) {
-        if (i % 3 === 0 && i % 5 === 0) {
-          console.log(`${i} là số chia hết cho cả 3 và 5`);
-        }
-      }
-    } else if (menu === 8) {
-      for (i = 1; i <= n; i = i + 1) {
-        if (i % 2 !== 0) {
-          console.log(`${i} là số lẻ trong dãy số từ 1 đến ${n}`);
-        }
-      }
-    } else if (menu === 9) {
-      break;
-    } else {
-      console.log("error");
-    }
-  }
-}
+//         1. Kiểm tra N có phải số nguyên tố
+//         2. Tính tổng các số từ 1 đến N
+//         3. Tính giai thừa của N (N!)
+//         4. In bảng nhân của N
+//         5. Đếm số ước của N
+//         6. Kiểm tra N có phải số hoàn hảo
+//         7. In tất cả số chia hết cho 3 và 5 từ 1 đến N
+//         8. In tất cả số lẻ từ 1 đến N
+//         9. Thoát
+//         Lựa chọn của bạn: `);
+
+//     switch (menu) {
+//       case 1:
+//         let isPrime = true;
+//         for (i = 2; i <= Math.sqrt(n); i = i + 1) {
+//           if (n % i === 0) {
+//             isPrime = false;
+//           }
+//         }
+//         if (isPrime) {
+//           console.log(`${n} là số nguyên tố`);
+//         } else {
+//           console.log(`${n} không phải là số nguyên tố`);
+//         }
+//         break;
+//       case 2:
+//         let sumA = 0;
+//         for (i = 1; i <= n; i = i + 1) {
+//           sumA = sumA + i;
+//         }
+//         console.log(`tổng của 1 + 2 + 3 +...+ ${n} = ${sumA}`);
+//         break;
+//       case 3:
+//         let result = 1;
+//         for (i = n; i > 1; i = i - 1) {
+//           result = result * i;
+//         }
+//         console.log(`${n} x (${n}-1) x (${n}-2)...x 2 x 1 = ${result}`);
+//         break;
+//       case 4:
+//         let result1 = 0;
+//         for (i = 1; i <= 10; i = i + 1) {
+//           result1 = n * i;
+//           console.log(`${n}x${i}=${result1}`);
+//         }
+//         break;
+//       case 5:
+//         let factor = 0;
+//         for (i = 1; i <= n; i = i + 1) {
+//           if (n % i === 0) {
+//             factor = factor + 1;
+//           }
+//         }
+//         console.log(`có tất cả ${factor} ước số từ 1 đến ${n}`);
+//         break;
+//       case 6:
+//         let factor1 = 0;
+//         for (i = 1; i < n; i = i + 1) {
+//           if (n % i === 0) {
+//             factor1 = factor1 + i;
+//           }
+//         }
+//         if (factor1 === n) {
+//           console.log(`${n} là số hoàn hảo`);
+//         } else {
+//           console.log(`${n} không phải là số hoàn hảo`);
+//         }
+//         break;
+//       case 7:
+//         for (i = 1; i <= n; i = i + 1) {
+//           if (i % 3 === 0 && i % 5 === 0) {
+//             console.log(`${i} là số chia hết cho cả 3 và 5`);
+//           }
+//         }
+//         break;
+//       case 8:
+//         for (i = 1; i <= n; i = i + 1) {
+//           if (i % 2 !== 0) {
+//             console.log(`${i} là số lẻ trong dãy số từ 1 đến ${n}`);
+//           }
+//         }
+//         break;
+//       case 9:
+//         loop = false;
+//         break;
+//       default:
+//         console.log("error");
+//         break;
+//     }
+//   }
+// }
+
+//     if (menu === 1) {
+//       let isPrime = true;
+//       for (i = 2; i <= Math.sqrt(n); i = i + 1) {
+//         if (n % i === 0) {
+//           isPrime = false;
+//         }
+//       }
+//       if (isPrime) {
+//         console.log(`${n} là số nguyên tố`);
+//       } else {
+//         console.log(`${n} không phải là số nguyên tố`);
+//       }
+//     } else if (menu === 2) {
+//       let sumA = 0;
+//       for (i = 1; i <= n; i = i + 1) {
+//         sumA = sumA + i;
+//       }
+//       console.log(`tổng của 1 + 2 + 3 +...+ ${n} = ${sumA}`);
+//     } else if (menu === 3) {
+//       let result = 1;
+//       for (i = n; i > 1; i = i - 1) {
+//         result = result * i;
+//       }
+//       console.log(`${n} x (${n}-1) x (${n}-2)...x 2 x 1 = ${result}`);
+//     } else if (menu === 4) {
+//       let result1 = 0;
+//       for (i = 1; i <= 10; i = i + 1) {
+//         result1 = n * i;
+//         console.log(`${n}x${i}=${result1}`);
+//       }
+//     } else if (menu === 5) {
+//       let factor = 0;
+//       for (i = 1; i <= n; i = i + 1) {
+//         if (n % i === 0) {
+//           factor = factor + 1;
+//         }
+//       }
+//       console.log(`có tất cả ${factor} ước số từ 1 đến ${n}`);
+//     } else if (menu === 6) {
+//       let factor1 = 0;
+//       for (i = 1; i < n; i = i + 1) {
+//         if (n % i === 0) {
+//           factor1 = factor1 + i;
+//         }
+//       }
+//       if (factor1 === n) {
+//         console.log(`${n} là số hoàn hảo`);
+//       } else {
+//         console.log(`${n} không phải là số hoàn hảo`);
+//       }
+//     } else if (menu === 7) {
+//       for (i = 1; i <= n; i = i + 1) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//           console.log(`${i} là số chia hết cho cả 3 và 5`);
+//         }
+//       }
+//     } else if (menu === 8) {
+//       for (i = 1; i <= n; i = i + 1) {
+//         if (i % 2 !== 0) {
+//           console.log(`${i} là số lẻ trong dãy số từ 1 đến ${n}`);
+//         }
+//       }
+//     } else if (menu === 9) {
+//       break;
+//     } else {
+//       console.log("error");
+//     }
+//   }
+// }
+
+//B5
+//1 sử dụng vòng lặp để in ra các số từ 1 đến n
+
+//2 tìm trong vòng lặp các số chia hết cho 3 hoặc 7
+//qua mỗi vòng lặp lưu lại kết quả và cộng chúng lại với nhau
+
+//
